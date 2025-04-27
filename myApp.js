@@ -25,6 +25,12 @@ app.get(
   }
 );
 
+app.get("/:word/echo", (req, res) => {
+  const word = req.params.word; 
+  res.json({ echo: word }); 
+});
+
+
 app.get("/json", (req, res) => {
   let message = "Hello json";
 
