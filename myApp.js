@@ -1,48 +1,11 @@
-let express = require('express');
-let app = express();
+const express = require("express");
+const app = express();
 
-console.log("Hello World");
-
-const path = __dirname + "/views/index.html";
+// Serve static files from 'views' directory
+app.use(express.static(__dirname + "/views"));
 
 app.get("/", (req, res) => {
-  res.sendFile(path);
+  res.sendFile(__dirname + "/views/index.html");
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- module.exports = app;
+module.exports = app;
