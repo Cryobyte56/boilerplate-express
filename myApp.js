@@ -1,6 +1,9 @@
 const express = require("express");
 const app = express();
 require("dotenv").config();
+const bodyParser = require("body-parser");
+
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(function middleware(req, res, next) {
   var string = req.method + " " + req.path + " - " + req.ip;
