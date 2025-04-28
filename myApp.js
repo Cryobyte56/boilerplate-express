@@ -29,15 +29,19 @@ app.get(
 );
 
 app.get("/:word/echo", (req, res) => {
-  const word = req.params.word; 
-  res.json({ echo: word }); 
+  const word = req.params.word;
+  res.json({ echo: word });
 });
 
 app.get("/name", (req, res) => {
-  const { first, last } = req.query; 
-  res.json({ name: `${first} ${last}` }); 
+  const { first, last } = req.query;
+  res.json({ name: `${first} ${last}` });
 });
 
+app.post("/name", function (req, res) {
+  var string = req.body.first + " " + req.body.last;
+  res.json({ name: string });
+});
 
 app.get("/json", (req, res) => {
   let message = "Hello json";
